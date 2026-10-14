@@ -1,0 +1,6 @@
+{
+	"name": "pr-SelfHosted",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}

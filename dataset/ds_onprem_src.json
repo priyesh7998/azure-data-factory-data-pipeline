@@ -1,0 +1,23 @@
+{
+	"name": "ds_onprem_src",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ds_local_files",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"fileName": "DimAirline.csv",
+				"folderPath": "Data"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
