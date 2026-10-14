@@ -5,11 +5,23 @@
 		"factoryName": {
 			"value": "adf-project-adf"
 		},
+		"ds_azure_sql_src_password": {
+			"value": ""
+		},
 		"ds_datalake_accountKey": {
 			"value": ""
 		},
 		"ds_local_files_password": {
 			"value": ""
+		},
+		"ds_azure_sql_src_properties_typeProperties_server": {
+			"value": "adf-project-srvr.database.windows.net"
+		},
+		"ds_azure_sql_src_properties_typeProperties_database": {
+			"value": "adf-project-db"
+		},
+		"ds_azure_sql_src_properties_typeProperties_userName": {
+			"value": "adfprojectadmin"
 		},
 		"ds_datalake_properties_typeProperties_url": {
 			"value": "https://adfprojectstoragee.dfs.core.windows.net/"
