@@ -12,7 +12,7 @@
 				"type": "AzureBlobFSLocation",
 				"fileName": "DimAirport.json",
 				"folderPath": "github",
-				"fileSystem": "source"
+				"fileSystem": "bronze"
 			}
 		},
 		"schema": {}
