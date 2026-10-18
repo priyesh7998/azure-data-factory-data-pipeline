@@ -956,8 +956,6 @@
 					{
 						"name": "ExecuteOnPrem",
 						"type": "ExecutePipeline",
-						"state": "Inactive",
-						"onInactiveMarkAs": "Succeeded",
 						"dependsOn": [],
 						"policy": {
 							"secureInput": false
@@ -992,8 +990,6 @@
 					{
 						"name": "ExecuteAPI-pipe",
 						"type": "ExecutePipeline",
-						"state": "Inactive",
-						"onInactiveMarkAs": "Succeeded",
 						"dependsOn": [
 							{
 								"activity": "ExecuteOnPrem",
