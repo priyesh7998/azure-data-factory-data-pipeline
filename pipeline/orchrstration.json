@@ -5,6 +5,8 @@
 			{
 				"name": "ExecuteOnPrem",
 				"type": "ExecutePipeline",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"secureInput": false
@@ -39,6 +41,8 @@
 			{
 				"name": "ExecuteAPI-pipe",
 				"type": "ExecutePipeline",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "ExecuteOnPrem",
@@ -76,10 +80,38 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "sql-data-load",
+						"referenceName": "git-data-load",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Alert",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "ExecuteSql-pipe",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "POST",
+					"url": "https://prod-02.centralindia.logic.azure.com:443/workflows/ad25a8b32a0143c986a4416177c5fa28/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=xMpv3-CxjOPmI6-GuL_FPjNMJym80Z_Cdm3oC4iBrms",
+					"body": {
+						"value": "{\n    \"pipeline_name\": \"@{pipeline().Pipeline}\",\n    \"run_id\": \"@{pipeline().RunId}\",\n    \"status\": \"@{activity('ExecuteSql-pipe').output.pipelineReturnValue}\",\n    \"error\": \"@{if(equals(activity('ExecuteSql-pipe').output.pipelineReturnValue, 'Failed'), string(activity('ExecuteSql-pipe').output.pipelineReturnValue), 'No Error')}\"\n}",
+						"type": "Expression"
+					}
 				}
 			}
 		],
