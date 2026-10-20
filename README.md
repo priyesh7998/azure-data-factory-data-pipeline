@@ -301,12 +301,12 @@ ExecuteOnPrem  ──▶  ExecuteAPI-pipe  ──▶  ExecuteSql-pipe  ──▶
  
 ## 👨‍💻 Author
  
-**Golu**
+**Priyesh Kumar** <br>
 BCA Student | Aspiring Data Engineer | Azure • PySpark • SQL • Python
  
-- 🔗 GitHub: [@Priyesh47data](https://github.com/Priyesh47data)
-- 💼 LinkedIn: [Add your LinkedIn URL](ADD_LINKEDIN_URL_HERE)
-- 📧 Email: ADD_YOUR_EMAIL_HERE
+- 🔗 GitHub: [@priyesh7998](https://github.com/priyesh7998)
+- 💼 LinkedIn: [@priyesh7998](https://www.linkedin.com/in/priyesh7998/)
+- 📧 Email: priyesh9080@gmail.com
 ---
  
 ⭐ *If you found this project useful, please consider giving it a star!*
